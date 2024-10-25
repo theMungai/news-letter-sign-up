@@ -9,43 +9,548 @@
     --white: hsl(0, 0%, 100%);
 }
 
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--charcoal-grey);
+    font-family: "Roboto";
+}
 
+.main-container{
+    height: auto;
+    width: 50%;
+    border-radius: 20px;
+    background-color: var(--white);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction:row-reverse;
+    padding: 20px;
+    box-shadow: 20px 20px 20px 20px rgba(0,0,0,0.2);
+}
 
+.stay-updated{
+    width: 50%;
+    padding: 30px 20px;
+}
+
+.header h1{
+    color: var(--dark-slate-grey);
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.header p {
+    color: var(--charcoal-grey);
+}
+
+.stay-updated ul {
+    color: var(--charcoal-grey);
+}
+
+.stay-updated ul li {
+    padding: 5px 12px;
+    list-style: url(/images/icon-list.svg);
+}
+
+.label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.label label {
+    color: var(--dark-slate-grey);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding-bottom: -15px;
+}
+
+.label #error-message{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--tomato);
+}
+
+input[type="email"]{
+    display: block;
+    width: 90%;
+    padding: 15px 10px;
+    border-radius: 10px;
+    
+}
+
+input[type="button"]{
+    display: block;
+    width: 95%;
+    padding: 15px 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: var(--white);
+    background-color: var(--dark-slate-grey);
+    border: none;
+    font-size: 1.01rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background: linear-gradient(45deg ,hsl(3, 49%, 55%), var(--tomato));
+}
+
+.image{
+    width: 50%;
+    border-radius:10px ;
+    background: url(/images/illustration-sign-up-desktop.svg);
+    background-repeat: no-repeat;
+    position: relative;
+    top: 0%;
+}
 
 .success-container{
     display: none;
+    height: auto;
+    width: 20%;
+    border-radius: 20px;
+    background-color: var(--white);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px;
+    box-shadow: 20px 20px 20px 20px rgba(0,0,0,0.2);
 }
 
+.success-container img{
+    width: 50px;
+}
 
+.success-container h1{
+    font-size: 2.7rem;
+    color: var(--dark-slate-grey);
+}
 
+.success-container p {
+    color: var(--charcoal-grey);
+    line-height: 1.6rem;
+    font-size: 0.9rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.success-container span {
+    color: var(--dark-slate-grey);
+    font-weight: 550;
+}
 
 .attribution { 
     font-size: 11px; 
-    text-align: center; 
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
 }
-    
+
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+/* ===================== Media Queries ============================ */
+/* ===================== Mobile Device ============================ */
+
+@media (max-width:480px){
+    body{
+        background-color: var(--white);
+    }
+
+    .main-container{
+        width: 100%;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%);
+        display:block ;
+        padding: 0px;
+        box-shadow: none;
+    }
+    
+    .stay-updated{
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .header h1{
+        font-size: 2.2rem;
+        font-weight: 550;
+    }
+    
+    .header p {
+        font-size: 0.95rem;
+    }
+    
+    .stay-updated ul {
+        font-size: 0.95rem;
+        margin: -10px;
+    }
+    
+    .stay-updated ul li {
+        padding: 5px 6px;
+    }
+
+    .email-address{
+        margin-top: 20px;
+    }
+
+    .label #error-message{
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--tomato);
+    }
+    
+    input[type="email"]{
+        width: 85%;
+
+    }
+    
+    input[type="button"]{
+        width: 90%;
+    }
+ 
+    .image{
+        width: 100%;
+        height: 280px;
+        border-radius: 0px 0px 20px 20px ;
+        background: url(/images/illustration-sign-up-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        
+    }
+    
+    .success-container{
+        width: 100%;
+        height: auto;
+        border-radius: 0px;
+        padding: 0px;
+        box-shadow: none;
+        margin: 0px 20px;
+    }
+  
+    .success-container p{
+        width: 80%;
+    }
+    
+    .success-container h1{
+        font-size: 2.4rem;
+    }
+
+    .success-container input[type="button"]{
+        margin-top: 180px;
+    }
+
+    .attribution{
+        display: none;
+    }
+   
+
+}
+
+/* ===================== Small Tablets ============================ */
+
+@media (min-width:481px) and (max-width:767px){
+    body{
+        background-color: var(--white)
+    }
+
+    .main-container{
+        width: 100%;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%);
+        display:block ;
+        padding: 0px;
+        box-shadow: none;
+    }
+    
+    .stay-updated{
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .header h1{
+        font-size: 2.5rem;
+        font-weight: 550;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .stay-updated ul {
+        font-size: 1rem;
+        margin: -10px;
+    }
+    
+    .stay-updated ul li {
+        padding: 8px 6px;
+    }
+
+    .email-address{
+        margin-top: 60px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .label {
+        width: 60%;
+    }
+
+    .label #error-message{
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--tomato);
+    }
+    
+    input[type="email"]{
+        width: 65%;
+        padding: 16px 10px;
+    }
+    
+    input[type="button"]{
+        width: 70%;
+        padding: 18px 10px;
+        margin-top: 30px;
+    }
+ 
+    .image{
+        width: 100%;
+        height: 280px;
+        border-radius: 0px 0px 20px 20px ;
+        background: url(/images/illustration-sign-up-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+    }
+    
+    .success-container{
+        width: 100%;
+        height: auto;
+        border-radius: 0px;
+        padding: 0px;
+        box-shadow: none;
+        margin: 0px 20px;
+    }
+  
+    .success-container p{
+        width: 80%;
+    }
+    
+    .success-container h1{
+        font-size: 2.4rem;
+    }
+
+    .success-container input[type="button"]{
+        margin-top: 180px;
+    }
+
+    .attribution{
+        display: none;
+    }
+
+}
+
+
+/* ===================== Tablets ============================ */
+
+@media (min-width:768px) and (max-width:991px){
+    body{
+        background-color: var(--white)
+    }
+
+    .main-container{
+        width: 100%;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%);
+        display:block ;
+        padding: 0px;
+        box-shadow: none;
+    }
+    
+    .stay-updated{
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .header h1{
+        font-size: 2.5rem;
+        font-weight: 550;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .stay-updated ul {
+        font-size: 1rem;
+        margin: -10px;
+    }
+    
+    .stay-updated ul li {
+        padding: 8px 6px;
+    }
+
+    .email-address{
+        margin-top: 60px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .label {
+        width: 60%;
+    }
+    
+    .label #error-message{
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--tomato);
+    }
+    
+    input[type="email"]{
+        width: 65%;
+        padding: 16px 10px;
+    }
+    
+    input[type="button"]{
+        width: 70%;
+        padding: 18px 10px;
+        margin-top: 30px;
+    }
+ 
+    .image{
+        width: 100%;
+        height: 280px;
+        border-radius: 0px 0px 20px 20px ;
+        background: url(/images/illustration-sign-up-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+    }
+    
+    .success-container{
+        width: 100%;
+        height: auto;
+        border-radius: 0px;
+        padding: 0px;
+        box-shadow: none;
+        margin: 0px 20px;
+    }
+  
+    .success-container p{
+        width: 80%;
+    }
+    
+    .success-container h1{
+        font-size: 2.4rem;
+    }
+
+    .success-container input[type="button"]{
+        margin-top: 180px;
+    }
+
+    .attribution{
+        display: none;
+    }
+
+}
+
+
+/* ===================== Small Laptops ============================ */
+
+@media (min-width:992px) and (max-width:1199px){
+
+    .main-container{
+        width: 60%;
+    }
+    
+    .stay-updated{
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .header h1{
+        font-size: 2.5rem;
+        font-weight: 550;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .stay-updated ul {
+        font-size: 1rem;
+        margin: -10px;
+    }
+    
+    .stay-updated ul li {
+        padding: 8px 6px;
+    }
+
+    .email-address{
+        margin-top: 60px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .label #error-message{
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--tomato);
+    }
+    
+    input[type="email"]{
+        width: 90%;
+        padding: 16px 10px;
+    }
+    
+    input[type="button"]{
+        width: 95%;
+        padding: 18px 10px;
+        margin-top: 30px;
+    }
+ 
+    .image{
+        width: 100%;
+        border-radius: 10px ;
+        background: url(/images/illustration-sign-up-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+    }
+    
+    .success-container{
+        width: 30%;
+        margin: 0px 20px;
+    }
+    
+    .success-container h1{
+        font-size: 2.4rem;
+    }
+
+
+    .attribution{
+        display: none;
+    }
+
 }

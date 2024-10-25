@@ -18,12 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         else if(userInput.value === "" || !emailPattern.test(userInput.value)){
-            errorMessage.textContent = `Valid email required`
+            errorMessage.textContent = `Valid email required`;
+            userInput.style.borderColor = "hsl(4, 100%, 67%)";
+            userInput.style.color = "hsl(4, 100%, 67%)";
+            userInput.style.fontSize = "1.1rem";
+            userInput.style.fontWeight = "500";
+
         }
     });
 
     successButton.addEventListener('click', () => {
         mainContainer.style.display = "block";
         successContainer.style.display = "none";
+        location.reload(true);
     });
 });
